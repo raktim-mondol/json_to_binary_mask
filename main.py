@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+
 
 
 import os
@@ -14,7 +14,7 @@ import imgaug as ia
 from imgaug import augmenters as iaa
 
 
-# In[2]:
+
 
 
 def plot_pair(images, gray=False):
@@ -34,7 +34,7 @@ def plot_pair(images, gray=False):
     plt.show()
 
 
-# In[3]:
+
 
 
 def get_poly(ann_path):
@@ -47,7 +47,7 @@ def get_poly(ann_path):
     return shape_dicts
 
 
-# In[22]:
+
 
 
 def create_binary_masks(im, shape_dicts):
@@ -67,7 +67,7 @@ def create_binary_masks(im, shape_dicts):
 
 # ### Create Masks for Binary Classification
 
-# In[66]:
+
 
 
 image_list = sorted(os.listdir('img'), key=lambda x: int(x.split('.')[0]))
