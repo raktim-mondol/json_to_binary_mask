@@ -1,4 +1,4 @@
-# json_to_binary_mask
+# Json to Binary Mask
 This code converts annotated json file to binary mask
 
 
