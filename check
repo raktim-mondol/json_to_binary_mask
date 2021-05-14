@@ -1,0 +1,18 @@
+image_list = sorted(os.listdir('img'), key=lambda x: int(x.split('.')[0]))
+annot_list = sorted(os.listdir('anno'), key=lambda x: int(x.split('.')[0]))
+
+for im_fn, ann_fn in zip(image_list, annot_list):
+    
+    im = cv2.imread(os.path.join('img', im_fn), 0)
+    
+    ann_path = os.path.join('anno', ann_fn)
+    
+    shape_dicts = get_poly(ann_path)
+    
+    im_binary = create_binary_masks(im, shape_dicts)
+    
+    plt.imsave(im_fn,im_binary)
+
+    plot_pair([im, im_binary], gray=True)
+    
+    plt.show()
